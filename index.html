@@ -12,13 +12,25 @@
       overflow: hidden;
     }
 
+    /* === CONFIGURATION === */
+    :root {
+      /* Star Controls */
+      --star-vertical-position: 50; /* 0 = top, 50 = center, 100 = bottom */
+      --star-scale: 60; /* percent of container height */
+
+      /* Text Controls */
+      --text-font-size: 1.8vh;
+      --text-vertical-position: 80; /* 0 = top, 50 = center, 100 = bottom */
+      --shimmer-speed: 3s;
+    }
+
     .embed-wrapper {
       position: absolute;
-      top: 50%;
+      top: calc(var(--star-vertical-position) * 1%);
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80vh;
-      height: 80vh;
+      width: calc(var(--star-scale) * 1%);
+      height: calc(var(--star-scale) * 1%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -31,18 +43,18 @@
 
     .loading-text {
       position: absolute;
-      bottom: 8vh;
+      top: calc(var(--text-vertical-position) * 1%);
       left: 50%;
       transform: translateX(-50%);
       font-family: 'Inter', sans-serif;
-      font-size: 1.8vh;
+      font-size: var(--text-font-size);
       font-weight: 500;
       background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
       background-size: 200% auto;
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      animation: shimmer 2s infinite linear;
+      animation: shimmer var(--shimmer-speed) infinite linear;
       pointer-events: none;
       z-index: 10;
     }
