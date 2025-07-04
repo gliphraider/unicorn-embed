@@ -2,32 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Unicorn Embed (scaled & centered)</title>
+    <title>Unicorn Embed (Centered)</title>
     <style>
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
-        background-color: #000;
+        background: #000;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .scale-wrapper {
-        transform: scale(0.55); /* 55% от оригинального размера */
+        transform: scale(0.55);
         transform-origin: center center;
-        min-height: 620px;
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: auto;
+        height: auto;
+    
       }
 
       #embed {
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
       }
     </style>
   </head>
