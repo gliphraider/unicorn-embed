@@ -2,55 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Generating...</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
+  <title>Unicorn Embed</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100vh;
       background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .loader-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 500;
-      background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
-      background-size: 200% auto;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: shimmer 2s infinite linear;
-      margin-bottom: 24px;
-    }
-
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+    .embed-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50vh;
+      height: 50vh;
     }
 
     .unicorn-embed {
-      width: auto;
-      height: 50vh;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <div class="loader-text">Generating your video…</div>
-    <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
+  <div class="embed-wrapper">
+    <div
+      class="unicorn-embed"
+      data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
+    ></div>
   </div>
 
   <script type="text/javascript">
