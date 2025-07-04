@@ -9,7 +9,10 @@
         padding: 0;
         height: 100%;
         width: 100%;
-        background: #000;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       #embed {
@@ -22,20 +25,24 @@
     <div id="embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
 
     <script type="text/javascript">
-      !function(){
-        if(!window.UnicornStudio){
-          window.UnicornStudio = { isInitialized: false };
-          var i = document.createElement("script");
-          i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.27/dist/unicornStudio.umd.js";
-          i.onload = function(){
-            if (!window.UnicornStudio.isInitialized) {
-              UnicornStudio.init();
-              window.UnicornStudio.isInitialized = true;
-            }
-          };
-          (document.head || document.body).appendChild(i);
+      window.UnicornStudio = {
+        isInitialized: false,
+        config: {
+          scale: 0.5
         }
-      }();
+      };
+
+      (function() {
+        var script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.27/dist/unicornStudio.umd.js";
+        script.onload = function() {
+          if (!window.UnicornStudio.isInitialized) {
+            UnicornStudio.init();
+            window.UnicornStudio.isInitialized = true;
+          }
+        };
+        (document.head || document.body).appendChild(script);
+      })();
     </script>
   </body>
 </html>
