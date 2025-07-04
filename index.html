@@ -7,17 +7,18 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: white;
       height: 100vh;
-      display: flex;
-      align-items: center;    /* центр по вертикали */
-      justify-content: center; /* центр по горизонтали */
+      background: white;
       overflow: hidden;
     }
 
     .embed-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* абсолютный центр */
+      width: 50vh; /* можно подстроить */
       height: 50vh;
-      aspect-ratio: 16 / 10; /* соотношение сторон сцены */
     }
 
     .unicorn-embed {
