@@ -7,27 +7,27 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       background: white;
+      height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: center;    /* центр по вертикали */
+      justify-content: center; /* центр по горизонтали */
       overflow: hidden;
     }
 
-    .scale-wrapper {
-      transform: scale(0.55); /* 55% от реального размера */
-      transform-origin: center center;
+    .embed-wrapper {
+      height: 50vh;
+      aspect-ratio: 16 / 10; /* соотношение сторон сцены */
     }
 
     .unicorn-embed {
-      width: 1440px;
-      height: 900px;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="scale-wrapper">
+  <div class="embed-wrapper">
     <div
       class="unicorn-embed"
       data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
