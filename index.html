@@ -19,6 +19,10 @@
       transform: translate(-50%, -50%);
       width: 50vh;
       height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .unicorn-embed {
@@ -27,10 +31,7 @@
     }
 
     .loading-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin-top: 12px;
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 500;
@@ -41,7 +42,6 @@
       -webkit-background-clip: text;
       color: transparent;
       animation: shimmer 3.2s infinite linear;
-      z-index: 10;
       pointer-events: none;
     }
 
@@ -57,13 +57,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loading-text">Generating your video...</div>
-
   <div class="embed-wrapper">
-    <div
-      class="unicorn-embed"
-      data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
-    ></div>
+    <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
+    <div class="loading-text">Generating your video...</div>
   </div>
 
   <script type="text/javascript">
