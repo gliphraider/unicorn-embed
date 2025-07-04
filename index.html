@@ -16,9 +16,12 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.8); /* масштаб звезды */
-      width: 100vh;
-      height: 100vh;
+      transform: translate(-50%, -50%);
+      width: 80vh;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .unicorn-embed {
@@ -28,11 +31,11 @@
 
     .loading-text {
       position: absolute;
+      bottom: 8vh;
       left: 50%;
-      bottom: 8vh; /* расстояние от низа в % от высоты */
       transform: translateX(-50%);
       font-family: 'Inter', sans-serif;
-      font-size: 1.8vh; /* масштабируемый размер шрифта */
+      font-size: 1.8vh;
       font-weight: 500;
       background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
       background-size: 200% auto;
@@ -40,8 +43,8 @@
       -webkit-background-clip: text;
       color: transparent;
       animation: shimmer 2s infinite linear;
-      z-index: 10;
       pointer-events: none;
+      z-index: 10;
     }
 
     @keyframes shimmer {
@@ -56,14 +59,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loading-text">Generating your video...</div>
-
   <div class="embed-wrapper">
-    <div
-      class="unicorn-embed"
-      data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
-    ></div>
+    <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
   </div>
+
+  <div class="loading-text">Generating your video...</div>
 
   <script type="text/javascript">
     (function () {
@@ -72,9 +72,7 @@
         script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.27/dist/unicornStudio.umd.js";
         script.onload = function () {
           if (!window.UnicornStudio.isInitialized) {
-            UnicornStudio.init({
-              fps: 30 // фреймрейт синхронизирован с проектом
-            });
+            UnicornStudio.init();
             window.UnicornStudio.isInitialized = true;
           }
         };
