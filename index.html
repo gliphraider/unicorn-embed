@@ -12,19 +12,17 @@
       overflow: hidden;
     }
 
-    .center-wrapper {
+    .embed-wrapper {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 50vh;
+      height: 50vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .embed-wrapper {
-      width: 50vh;
-      height: 50vh;
+      justify-content: center;
     }
 
     .unicorn-embed {
@@ -33,11 +31,11 @@
     }
 
     .loading-text {
-      margin-top: 6px; /* ближе к звезде */
+      margin-top: 12px;
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 500;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
       background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
       background-size: 200% auto;
       background-clip: text;
@@ -59,10 +57,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="center-wrapper">
-    <div class="embed-wrapper">
-      <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
-    </div>
+  <div class="embed-wrapper">
+    <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
     <div class="loading-text">Generating your video...</div>
   </div>
 
