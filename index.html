@@ -26,44 +26,24 @@
       height: 100%;
     }
 
-    .loading-text {
+    .generating-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: 'Inter', sans-serif;
+      font-family: sans-serif;
       font-size: 16px;
-      font-weight: 500;
-      background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
-      background-size: 200% auto;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: shimmer 2s infinite linear;
-      z-index: 10;
+      color: black;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
       pointer-events: none;
     }
-
-    @keyframes shimmer {
-      0% {
-        background-position: 200% 0;
-      }
-      100% {
-        background-position: -200% 0;
-      }
-    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loading-text">Generating your video...</div>
-
   <div class="embed-wrapper">
-    <div
-      class="unicorn-embed"
-      data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
-    ></div>
+    <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
   </div>
+  <div class="generating-text">Generating your video...</div>
 
   <script type="text/javascript">
     (function () {
