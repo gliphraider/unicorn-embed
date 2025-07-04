@@ -16,12 +16,22 @@
     :root {
       /* Star Controls */
       --star-vertical-position: 50; /* 0 = top, 50 = center, 100 = bottom */
-      --star-scale: 60; /* percent of container height */
+      --star-scale: 64; /* percent of container height */
 
       /* Text Controls */
       --text-font-size: 1.8vh;
-      --text-vertical-position: 80; /* 0 = top, 50 = center, 100 = bottom */
-      --shimmer-speed: 3s;
+      --text-vertical-position: 92; /* 0 = top, 100 = bottom */
+      --shimmer-speed: 2s;
+    }
+
+    #global-mouse-capture {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
     }
 
     .embed-wrapper {
@@ -71,6 +81,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <div id="global-mouse-capture"></div>
+
   <div class="embed-wrapper">
     <div class="unicorn-embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
   </div>
@@ -91,6 +104,18 @@
         (document.head || document.body).appendChild(script);
       }
     })();
+
+    document.addEventListener("mousemove", (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      window.lastMouseX = x;
+      window.lastMouseY = y;
+
+      if (window.UnicornStudio && typeof UnicornStudio.updateMouse === "function") {
+        UnicornStudio.updateMouse(x, y);
+      }
+    });
   </script>
+
 </body>
 </html>
