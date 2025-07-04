@@ -7,25 +7,23 @@
       html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
-        background: #000;
-      }
-
-      #unicorn-container {
         width: 100vw;
         height: 100vh;
+        background-color: #000;
+      }
+
+      #embed {
+        width: 100%;
+        height: 100%;
       }
     </style>
   </head>
   <body>
-    <div
-      id="unicorn-container"
-      data-us-project="hr1f8iuHw9s6Mw8Wb1sv"
-    ></div>
+    <div id="embed" data-us-project="hr1f8iuHw9s6Mw8Wb1sv"></div>
 
     <script type="text/javascript">
       !function(){
-        if (!window.UnicornStudio) {
+        if(!window.UnicornStudio){
           window.UnicornStudio = { isInitialized: false };
           var i = document.createElement("script");
           i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.27/dist/unicornStudio.umd.js";
