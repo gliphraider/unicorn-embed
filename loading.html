@@ -8,24 +8,23 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: white;
       height: 100vh;
+      background: white;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center; /* по центру по вертикали */
     }
 
     .text {
-      margin-top: 40vh;
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 500;
       background: linear-gradient(90deg, #000 0%, #000 40%, transparent 70%, #000 100%);
-      background-size: 200%;
+      background-size: 200% auto;
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      animation: shimmer 2s infinite;
+      animation: shimmer 2s infinite linear;
     }
 
     @keyframes shimmer {
@@ -35,6 +34,6 @@
   </style>
 </head>
 <body>
-  <div class="text">Generating your video…</div>
+  <div class="text">Generating your video...</div>
 </body>
 </html>
